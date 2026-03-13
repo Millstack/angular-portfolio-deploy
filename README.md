@@ -1,6 +1,10 @@
 
 # Git Build Settings
 
+## AWS Amplify setting location:
+
+`AWS Amplify` - `app_name` - `Hosting` (left side) - `Build Settings` - `amplify.yml` file
+
 ## 1. Amplify Bild code for git repo only
 ```yml
 version: 1
