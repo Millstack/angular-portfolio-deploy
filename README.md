@@ -34,19 +34,16 @@ frontend:
   phases:
     preBuild:
       commands:
-        # 1. Initialize the submodule to fetch your angular-portfolio code
+        - git config --global url."https://${GITHUB_PAT}@github.com/".insteadOf "https://github.com/"
         - git submodule update --init --recursive
-        # 2. Enter the app-source folder to install dependencies
         - cd app-source && npm install
     build:
       commands:
-        # 3. Build the project from within the submodule directory
         - cd app-source && npm run build
   artifacts:
-    # 4. Point to the build output located inside the submodule folder
     baseDirectory: app-source/dist/angular-portfolio/browser
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - app-source/node_modules/**/*
